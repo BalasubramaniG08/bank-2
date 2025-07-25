@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Component 1: Add Customer Form -->
+    <section class="form-section">
+      <h2>Add Customer</h2>
+      <input type="text" id="name" placeholder="Customer Name">
+      <input type="text" id="account" placeholder="Account Number">
+      <input type="number" id="balance" placeholder="Initial Balance">
+      <button onclick="addCustomer()">Submit</button>
+    </section>
+
+    <!-- Component 2: Customer Details -->
+    <section class="customer-section">
+      <h2>Customer Details</h2>
+      <div id="customerDetails" class="horizontal-row"></div>
+    </section>
+
+    <!-- Component 3: Banking Actions -->
+    <section class="banking-section">
+      <h2>Banking Actions</h2>
+      <div class="banking-row">
+        <div class="banking-col">
+          <input type="number" id="depositAmount" placeholder="Deposit Amount">
+          <button onclick="deposit()">Deposit</button>
+          <button onclick="showBalance('deposit')">Bank Balance</button>
+        </div>
+        <div class="banking-col">
+          <input type="number" id="withdrawAmount" placeholder="Withdraw Amount">
+          <button onclick="withdraw()">Withdraw</button>
+          <button onclick="showBalance('withdraw')">Bank Balance</button>
+        </div>
+        <div class="banking-col">
+          <input type="number" id="transferAmount" placeholder="Transfer Amount">
+          <button onclick="transfer()">Transfer</button>
+          <button onclick="showBalance('transfer')">Bank Balance</button>
+        </div>
+      </div>
+      <button class="delete-button" onclick="deleteLastCustomer()">Delete Last Customer</button>
+    </section>
+
+    <!-- Component 4: Outbox -->
+    <section class="outbox-section">
+      <h2>Outbox</h2>
+      <div class="outbox-vertical">
+        <div id="outbox-balance" class="outbox-box">empty</div>
+        <div id="outbox-deposit" class="outbox-box">empty</div>
+        <div id="outbox-withdraw" class="outbox-box">empty</div>
+        <div id="outbox-transfer" class="outbox-box">empty</div>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
